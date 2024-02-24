@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: label
+  name: annotations
   labels:
     course: devops
     student: mouli
