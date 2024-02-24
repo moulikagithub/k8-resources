@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: hello-pod
+  name: hello-pod1
   namespace: roboshop
 spec:
   containers:
-  - name: hello-pod
+  - name: hello-pod1
     image: nginx
     ports:
     - containerPort: 80
