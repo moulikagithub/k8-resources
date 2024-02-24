@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: label
+  labels:
+    course: devops
+    student: mouli
+spec:
+  containers:
+  - name: label
+    image: nginx
+    ports:
+    - containerPort: 80
+
