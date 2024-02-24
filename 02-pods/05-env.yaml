@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: env-demo
   labels:
-   name:mouli
+   name: mouli
 spec:
   containers:
   - name: env-demo
