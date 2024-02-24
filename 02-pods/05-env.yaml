@@ -6,7 +6,7 @@ metadata:
    name: mouli
 spec:
   containers:
-  - name: env-demo
+  - name: nginx
     image: nginx
     env:
     - name: DEMO_GREETING
