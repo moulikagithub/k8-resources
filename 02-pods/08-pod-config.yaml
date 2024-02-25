@@ -3,20 +3,20 @@ kind: Pod
 metadata:
    name: config-map
 spec:
- containers:
- - name: hello-pod
-   image: nginx
-   ports:
-   - containerport: 80
-   env:
-   - name: course
-     valueFrom:
-       configMapKeyRef:
-        name: devops-config
-        key: course
-   - name: student
-     valueFrom:
-       configMapKeyRef:
-        name: devops-config
-        key: student
+  containers:
+  - name: hello-pod
+    image: nginx
+    ports:
+    - containerPort: 80
+    env:
+    - name: course
+      valueFrom:
+        configMapKeyRef:
+          name: devops-config
+          key: course
+    - name: student
+      valueFrom:
+        configMapKeyRef:
+          name: devops-config
+          key: student
 
