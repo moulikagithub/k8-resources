@@ -14,11 +14,11 @@ spec:
         teir: frontend
   template:
     metadata:
-      label:
+      labels:
         app: nginx
         teir: frontend
     spec:
-      container:
+      containers:
       - name: nginx1
         image: nginx
         
