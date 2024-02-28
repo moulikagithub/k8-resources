@@ -55,7 +55,7 @@ spec:
           subPath: filebeat.yml
       volumes:
       - name: nginx-log
-        emptyDir {}
+        emptyDir: {}
       - name: filebeat-config
         configMap:
           name: filebeat-config
