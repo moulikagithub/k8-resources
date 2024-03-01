@@ -11,23 +11,35 @@ spec:
     requests:
       storage: 5Gi
 ---
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: efs-dynamic
+  name: apps
   labels:
-    demo: efs-dynamic
+     demo: efs-dynamic
+
 spec:
-  containers:
-  - name: nginx
-    image: nginx
-    volumeMounts:
-    - name: nginx-data
-      mountPath: /usr/share/nginx/html
-  volumes:
-  - name: nginx-data
-    persistentVolumeClaim:
-      claimName: efs-dynamic
+  replicas: 3
+  selector:
+    matchLabels:
+        demo: efs-dynamic
+  template:
+    metadata:
+      labels:
+        demo: efs-dynamic
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+      volumeMounts:
+      - name: nginx-data
+        mountPath: /usr/share/nginx/html
+      volumes:
+      - name: nginx-data
+        persistentVolumeClaim:
+          claimName: efs-dynamic
 
 ---
 apiVersion: v1
